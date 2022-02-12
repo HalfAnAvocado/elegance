@@ -16,7 +16,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 ### Template
-The template itself (HTML, CSS, Webmanifest, image files) is licensed under the [MIT](https://choosealicense.com/licenses/mit/).
+The template itself (HTML, CSS, Webmanifest, image files) is licensed under the [MIT license](https://choosealicense.com/licenses/mit/).
 
 ### Fonts
 Fonts are licensed under [SIL Open Font License 1.1](https://choosealicense.com/licenses/ofl-1.1/).
