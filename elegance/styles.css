@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/* Colors (Light Mode)                                                        */
+/* -------------------------------------------------------------------------- */
 :root {
     --elegance-text-color: #000;
     --elegance-background-color: #fff;
@@ -17,6 +20,9 @@
     --elegance-navigation-marker-color: #aaa;
 }
 
+/* -------------------------------------------------------------------------- */
+/* Colors (Dark Mode)                                                         */
+/* -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
     :root {
         --elegance-text-color: #f1f1f1;
@@ -38,6 +44,32 @@
     }
 }
 
+/* -------------------------------------------------------------------------- */
+/* Top-level Elements                                                         */
+/* -------------------------------------------------------------------------- */
+html {
+    width: 100%;
+    height: 100vh;
+
+    font-size: 125%;
+}
+
+body {
+    color: var(--elegance-text-color);
+    background-color: var(--elegance-background-color);
+
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    font-family: "Source Serif Pro", "Apple Garamond", "Baskerville", "Libre Baskerville", "Times New Roman", "Droid Serif", "Times", "Noto Serif TC", serif;
+}
+
+::selection {
+    color: var(--elegance-background-color);
+    background-color: var(--elegance-text-color);
+}
+
 .container {
     display: grid;
 
@@ -54,33 +86,70 @@
     height: 100%;
 }
 
-::selection {
-    color: var(--elegance-background-color);
-    background-color: var(--elegance-text-color);
-}
-
-html {
-    font-size: 125%;
-    width: 100%;
-    height: 100vh;
-}
-
-body {
-    font-family: "Source Serif Pro", "Apple Garamond", "Baskerville", "Libre Baskerville", "Times New Roman", "Droid Serif", "Times", "Noto Serif TC", serif;
-    color: var(--elegance-text-color);
-    background-color: var(--elegance-background-color);
-    margin: 0;
-    height: 100%;
-}
-
+/* -------------------------------------------------------------------------- */
+/* Header                                                                     */
+/* -------------------------------------------------------------------------- */
 header {
     grid-area: header;
 }
 
+header h1 {
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    border-bottom: none;
+    color: var(--elegance-accent-text-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Main                                                                       */
+/* -------------------------------------------------------------------------- */
+main {
+    grid-area: content;
+    line-height: 1.65;
+    hyphens: auto;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main a {
+    color: var(--elegance-text-color);
+    /*text-decoration-color: #000;*/
+}
+
+main a:hover {
+    color: var(--elegance-accent-text-color);
+}
+
+/*main p:nth-of-type(2):first-letter {*/
+main p:first-of-type:first-letter {
+    color: var(--elegance-accent-text-color);
+    float: left;
+    font-size: 8rem;
+    line-height: 74%;
+    margin-top: 0.7rem;
+    margin-bottom: -0.7rem;
+    padding-right: 0.2rem;
+}
+
+/*main p:nth-of-type(2):first-line {*/
+main p:first-of-type:first-line {
+    font-variant: small-caps;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Backlinks Panel                                                            */
+/* -------------------------------------------------------------------------- */
 aside {
     grid-area: aside;
 }
 
+/* -------------------------------------------------------------------------- */
+/* Navigation                                                                 */
+/* -------------------------------------------------------------------------- */
 nav {
     grid-area: nav;
     justify-self: end;
@@ -101,6 +170,15 @@ nav ul li::marker {
     color: var(--elegance-navigation-marker-color);
 }
 
+nav a {
+    text-decoration: none;
+    color: var(--elegance-text-color);
+}
+
+nav a:hover {
+    color: var(--elegance-accent-text-color);
+}
+
 nav svg {
     margin-bottom: 2rem;
 }
@@ -111,6 +189,26 @@ svg {
 
 .svgGroup {
     fill: var(--elegance-text-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                     */
+/* -------------------------------------------------------------------------- */
+footer {
+    grid-area: footer;
+    padding: 1.5rem;
+    border-top: 2px solid;
+    border-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(--elegance-heading-underline-color) 50%, rgba(0,0,0,0) 100%) 1;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+address {
+    display: inline;
+    font-style: normal;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -125,67 +223,9 @@ a {
     /*text-decoration-style: dotted;*/
 }
 
-main a {
-    color: var(--elegance-text-color);
-    /*text-decoration-color: #000;*/
-}
-
-main a:hover {
-    color: var(--elegance-accent-text-color);
-}
-
-footer a {
-    color: var(--elegance-text-color);
-}
-
-footer a:hover {
-    color: var(--elegance-accent-text-color);
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--elegance-text-color);
-    transition-property: background-color,border-color,color,fill,stroke;
-    transition-duration: .2s;
-    transition-timing-function: linear;
-}
-
-nav a:hover {
-    color: var(--elegance-accent-text-color);
-}
-
-u a {
-    color: var(--elegance-accent-text-color);
-    transition-property: background-color,border-color,color,fill,stroke;
-    transition-duration: .2s;
-    transition-timing-function: linear;
-}
-
-u a:hover {
-    color: var(--elegance-text-color);
-}
-
 /* -------------------------------------------------------------------------- */
-/*                                                                            */
+/* Headings                                                                   */
 /* -------------------------------------------------------------------------- */
-
-main {
-    grid-area: content;
-    line-height: 1.65;
-    hyphens: auto;
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-footer {
-    grid-area: footer;
-    padding: 1.5rem;
-    border-top: 2px solid;
-    border-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(--elegance-heading-underline-color) 50%, rgba(0,0,0,0) 100%) 1;
-    text-align: center;
-}
-
 h1, h2, h3, h4, h5, h6 {
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
@@ -216,45 +256,23 @@ h3 {
     font-size: 1.125em;
 }
 
-
-header h1 {
-    text-align: center;
-    font-variant: small-caps;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 600;
-    border-bottom: none;
-    color: var(--elegance-accent-text-color);
-}
-
-footer p {
-    margin: 0;
-}
-
-address {
-    display: inline;
-    font-style: normal;
-}
-
-/*main p:nth-of-type(2):first-letter {*/
-main p:first-of-type:first-letter {
-    color: var(--elegance-accent-text-color);
-    float: left;
-    font-size: 8rem;
-    line-height: 74%;
-    margin-top: 0.7rem;
-    margin-bottom: -0.7rem;
-    padding-right: 0.2rem;
-}
-
-/*main p:nth-of-type(2):first-line {*/
-main p:first-of-type:first-line {
-    font-variant: small-caps;
-}
-
+/* -------------------------------------------------------------------------- */
+/* Accented Elements                                                          */
+/* -------------------------------------------------------------------------- */
 u {
     color: var(--elegance-accent-text-color);
     text-decoration: none;
+}
+
+u a {
+    color: var(--elegance-accent-text-color);
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+
+u a:hover {
+    color: var(--elegance-text-color);
 }
 
 header h1::selection,
@@ -267,6 +285,23 @@ u a::selection,
     background-color: var(--elegance-accent-text-color);
 }
 
+#eof {
+    text-align: right;
+    float: right;
+    color: var(--elegance-accent-text-color);
+    font-family: "UnifrakturMaguntia";
+    font-size: 2rem;
+    margin: 0;
+    text-decoration: none;
+}
+
+#eof:hover {
+    color: var(--elegance-text-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Code Blocks                                                                */
+/* -------------------------------------------------------------------------- */
 pre {
     display: block;
     background-color: var(--elegance-code-background-color);
@@ -275,6 +310,9 @@ pre {
     padding: 25px;
 }
 
+/* -------------------------------------------------------------------------- */
+/* Tables                                                                     */
+/* -------------------------------------------------------------------------- */
 table {
     margin: 0;
     padding: 0;
@@ -315,6 +353,9 @@ thead tr {
     background: var(--elegance-table-head-background);
 }
 
+/* -------------------------------------------------------------------------- */
+/* Images                                                                     */
+/* -------------------------------------------------------------------------- */
 img {
     display: block;
     margin-left: auto;
@@ -323,41 +364,14 @@ img {
     height: auto;
 }
 
-#eof {
-    text-align: right;
-    float: right;
-    color: var(--elegance-accent-text-color);
-    font-family: "UnifrakturMaguntia";
-    font-size: 2rem;
-    margin: 0;
-    text-decoration: none;
-}
-
-#eof:hover {
-    color: var(--elegance-text-color);
-}
-
-#back-to-top {
-    text-align: left;
-    float: left;
-    margin: 0;
-    padding-left: .25rem;
-    padding-right: .25rem;
-    border-radius: .125rem;
-    color: var(--elegance-accent-text-color);
-    background-color: var(--elegance-accent-background-color);
-    text-decoration: none;
-    text-decoration-thickness: from-font;
-    transition-property: background-color,border-color,color,fill,stroke;
-    transition-duration: .15s;
-    transition-timing-function: linear;
-}
-
-#back-to-top:hover {
-    background-color: var(--elegance-text-color);
-}
-
+/* -------------------------------------------------------------------------- */
+/* Mobile                                                                     */
+/* -------------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
+    html {
+        font-size: 18px;
+    }
+
     .container {
         display: grid;
 
@@ -388,26 +402,5 @@ img {
 
     nav svg {
         display: none;
-    }
-
-
-
-/*
-    nav ul li {
-        display: inline;
-        padding-left: 1ch;
-    }
-
-    nav ul li::before {
-        content: '•';
-        margin-right: 1ch;
-    }
-
-    nav ul {
-        padding-left: 0;
-    }
-*/
-    html {
-        font-size: 18px;
     }
 }
