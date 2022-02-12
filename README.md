@@ -1,6 +1,6 @@
 # Elegance - Zim Desktop Wiki HTML Template
 
-Elegance is a [Zim Desktop Wiki](https://zim-wiki.org/) HTML template heavily inspired by [Gwern's website](https://www.gwern.net/).
+Elegance is a [Zim desktop wiki](https://zim-wiki.org/) HTML template to generate a static website that is heavily inspired by [Gwern's website](https://www.gwern.net/).
 
 ## Installation
 
