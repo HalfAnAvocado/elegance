@@ -1,20 +1,11 @@
 :root {
     --elegance-text-color: #000;
     --elegance-background-color: #fff;
-    --elegance-link-color: #454545;
-    --elegance-link-hover-color: #CC0000;
-    --elegance-selection-color: #fff;
-    --elegance-selection-background-color: #454545;
-    --elegance-heading-underline-color: #888;
-    --elegance-link-paragraph-color: #000;
-    --elegance-link-paragraph-background-color: #e1e1e1;
-    --elegance-link-paragraph-background-hover-color: #e18d8d;
+    --elegance-accent-text-color: #cc0000;
+    --elegance-accent-background-color: #fff;
 
-    --elegance-highlight-color: #CC0000;
-    --elegance-link-highlight-color: #CC0000;
-    --elegance-link-hover-highlight-color: #520000;
-    --elegance-selection-highlight-color: #fff;
-    --elegance-selection-background-highlight-color: #CC0000;
+    --elegance-heading-underline-color: #888;
+
     --elegance-code-background-color: #f8f8f8;
     --elegance-code-border-color: #bbb;
 
@@ -22,26 +13,19 @@
     --elegance-table-row-background-odd: #f6f6f6;
     --elegance-table-head-background: #fff;
     --elegance-table-border-color: #000;
+
+    --elegance-navigation-marker-color: #aaa;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --elegance-text-color: #F1F1F1;
+        --elegance-text-color: #f1f1f1;
         --elegance-background-color: #111;
-        --elegance-link-color: #E5E5E5;
-        --elegance-link-hover-color: #FF7070;
-        --elegance-selection-color: #111;
-        --elegance-selection-background-color: #F1F1F1;
-        --elegance-heading-underline-color: #A1A1A1;
-        --elegance-link-paragraph-color: #fff;
-        --elegance-link-paragraph-background-color: #fff;
-        --elegance-link-paragraph-background-hover-color: #e18d8d;
+        --elegance-accent-text-color: #ff7070;
+        --elegance-accent-background-color: #111;
 
-        --elegance-highlight-color: #FF7070;
-        --elegance-link-highlight-color: #FF7070;
-        --elegance-link-hover-highlight-color: #FFADAD;
-        --elegance-selection-highlight-color: #111;
-        --elegance-selection-background-highlight-color: #FF7070;
+        --elegance-heading-underline-color: #a1a1a1;
+
         --elegance-code-background-color: #212121;
         --elegance-code-border-color: #6c6c6c;
 
@@ -49,6 +33,8 @@
         --elegance-table-row-background-odd: #252525;
         --elegance-table-head-background: #111;
         --elegance-table-border-color: #fff;
+
+        --elegance-navigation-marker-color: #aaa;
     }
 }
 
@@ -69,8 +55,8 @@
 }
 
 ::selection {
-    color: var(--elegance-selection-color);
-    background-color: var(--elegance-selection-background-color);
+    color: var(--elegance-background-color);
+    background-color: var(--elegance-text-color);
 }
 
 html {
@@ -112,7 +98,7 @@ nav ul {
 }
 
 nav ul li::marker {
-    color: #AAA;
+    color: var(--elegance-navigation-marker-color);
 }
 
 nav svg {
@@ -131,7 +117,7 @@ svg {
 /* Links                                                                      */
 /* -------------------------------------------------------------------------- */
 a {
-    color: var(--elegance-link-color);
+    color: var(--elegance-text-color);
     text-decoration-thickness: from-font;
     transition-property: background-color,border-color,color,fill,stroke;
     transition-duration: .2s;
@@ -140,43 +126,43 @@ a {
 }
 
 main a {
-    color: var(--elegance-link-paragraph-color);    
+    color: var(--elegance-text-color);
     /*text-decoration-color: #000;*/
 }
 
 main a:hover {
-    color: var(--elegance-link-hover-color);
+    color: var(--elegance-accent-text-color);
 }
 
 footer a {
-    color: var(--elegance-link-paragraph-color);
+    color: var(--elegance-text-color);
 }
 
 footer a:hover {
-    color: var(--elegance-link-hover-color);
+    color: var(--elegance-accent-text-color);
 }
 
 nav a {
     text-decoration: none;
-    color: var(--elegance-link-color);
+    color: var(--elegance-text-color);
     transition-property: background-color,border-color,color,fill,stroke;
     transition-duration: .2s;
     transition-timing-function: linear;
 }
 
 nav a:hover {
-    color: var(--elegance-link-hover-color);
+    color: var(--elegance-accent-text-color);
 }
 
 u a {
-    color: var(--elegance-link-highlight-color);
+    color: var(--elegance-accent-text-color);
     transition-property: background-color,border-color,color,fill,stroke;
     transition-duration: .2s;
     transition-timing-function: linear;
 }
 
 u a:hover {
-    color: var(--elegance-link-hover-highlight-color);
+    color: var(--elegance-text-color);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -238,7 +224,7 @@ header h1 {
     line-height: 1.2;
     font-weight: 600;
     border-bottom: none;
-    color: var(--elegance-highlight-color);
+    color: var(--elegance-accent-text-color);
 }
 
 footer p {
@@ -252,7 +238,7 @@ address {
 
 /*main p:nth-of-type(2):first-letter {*/
 main p:first-of-type:first-letter {
-    color: var(--elegance-highlight-color);
+    color: var(--elegance-accent-text-color);
     float: left;
     font-size: 8rem;
     line-height: 74%;
@@ -267,7 +253,7 @@ main p:first-of-type:first-line {
 }
 
 u {
-    color: var(--elegance-highlight-color);
+    color: var(--elegance-accent-text-color);
     text-decoration: none;
 }
 
@@ -277,8 +263,8 @@ u b::selection,
 u i::selection,
 u a::selection,
 #eof::selection {
-    color: var(--elegance-selection-highlight-color);
-    background-color: var(--elegance-selection-background-highlight-color);
+    color: var(--elegance-accent-background-color);
+    background-color: var(--elegance-accent-text-color);
 }
 
 pre {
@@ -340,7 +326,7 @@ img {
 #eof {
     text-align: right;
     float: right;
-    color: var(--elegance-highlight-color);
+    color: var(--elegance-accent-text-color);
     font-family: "UnifrakturMaguntia";
     font-size: 2rem;
     margin: 0;
@@ -348,7 +334,7 @@ img {
 }
 
 #eof:hover {
-    color: var(--elegance-link-hover-highlight-color);
+    color: var(--elegance-text-color);
 }
 
 #back-to-top {
@@ -358,8 +344,8 @@ img {
     padding-left: .25rem;
     padding-right: .25rem;
     border-radius: .125rem;
-    color: var(--elegance-link-paragraph-color);
-    background-color: var(--elegance-link-paragraph-background-color);
+    color: var(--elegance-accent-text-color);
+    background-color: var(--elegance-accent-background-color);
     text-decoration: none;
     text-decoration-thickness: from-font;
     transition-property: background-color,border-color,color,fill,stroke;
@@ -368,7 +354,7 @@ img {
 }
 
 #back-to-top:hover {
-    background-color: var(--elegance-link-paragraph-background-hover-color);
+    background-color: var(--elegance-text-color);
 }
 
 @media screen and (max-width: 800px) {
