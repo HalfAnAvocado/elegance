@@ -75,7 +75,18 @@
             <b>Backlinks:</b>
             <ul>
             [% END %]
-                <li><a href='[% uri(backlink) %]'>[% backlink.name %]</a></li>
+                <li><a href='[% uri(backlink) %]'>[% backlink.basename %]</a></li>
+            [% IF loop.last %]
+            </ul>
+            [% END %]
+            [% END %]
+
+            [% FOR link IN page.links %]
+            [% IF loop.first %]
+            <b>See also:</b>
+            <ul>
+            [% END %]
+                <li><a href='[% uri(link) %]'>[% link.basename %]</a></li>
             [% IF loop.last %]
             </ul>
             [% END %]
