@@ -143,6 +143,28 @@ aside {
     grid-area: aside;
 }
 
+aside b {
+    font-variant: small-caps;
+    font-size: 1.125rem;
+}
+
+aside ul {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style-position: inside;
+    list-style-type: circle;
+}
+
+aside ul li::marker {
+    color: var(--elegance-navigation-marker-color);
+}
+
+aside a {
+    text-decoration: none;
+    color: var(--elegance-text-color);
+}
+
 /* -------------------------------------------------------------------------- */
 /* Navigation                                                                 */
 /* -------------------------------------------------------------------------- */
