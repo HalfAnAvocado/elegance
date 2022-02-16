@@ -177,11 +177,14 @@ nav {
 
 nav ul {
     padding: 0;
-    padding-left: 20px;
     margin-top: 0;
     margin-bottom: 0;
-    list-style: lower-roman;
-    list-style-position: outside;
+    list-style: circle;
+    list-style-position: inside;
+}
+
+nav ul ul {
+    padding-left: 20px;
 }
 
 nav ul li::marker {
