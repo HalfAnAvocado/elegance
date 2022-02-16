@@ -120,10 +120,6 @@ main a {
     /*text-decoration-color: #000;*/
 }
 
-main a:hover {
-    color: var(--elegance-accent-text-color);
-}
-
 /*main p:nth-of-type(2):first-letter {*/
 main p:first-of-type:first-letter {
     color: var(--elegance-accent-text-color);
@@ -175,10 +171,6 @@ nav a {
     color: var(--elegance-text-color);
 }
 
-nav a:hover {
-    color: var(--elegance-accent-text-color);
-}
-
 nav svg {
     margin-bottom: 2rem;
 }
@@ -221,6 +213,10 @@ a {
     transition-duration: .2s;
     transition-timing-function: linear;
     /*text-decoration-style: dotted;*/
+}
+
+a:hover {
+    color: var(--elegance-accent-text-color);
 }
 
 /* -------------------------------------------------------------------------- */
