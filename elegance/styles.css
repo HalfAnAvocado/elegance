@@ -93,7 +93,7 @@ header {
     grid-area: header;
 }
 
-header h1 {
+h1 {
     text-align: center;
     font-variant: small-caps;
     font-size: 2.5rem;
@@ -232,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-h1 {
+h2 {
     font-size: 2rem;
     line-height: 1;
     border-bottom: 1px solid var(--elegance-heading-underline-color);
@@ -243,7 +243,7 @@ h1 {
     font-variant: small-caps;
 }
 
-h2 {
+h3 {
     font-size: 1.25rem;
     line-height: 1.25;
     border-bottom: 1px solid var(--elegance-heading-underline-color);
@@ -251,7 +251,17 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+h4 {
+    text-transform: capitalize;
+    font-size: 1.125em;
+}
+
+h5 {
+    text-transform: capitalize;
+    font-size: 1.125em;
+}
+
+h6 {
     text-transform: capitalize;
     font-size: 1.125em;
 }
