@@ -136,6 +136,11 @@ main p:first-of-type:first-line {
     font-variant: small-caps;
 }
 
+main ul, main ol {
+    padding-left: 20px;
+    list-style-position: outside;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Backlinks Panel                                                            */
 /* -------------------------------------------------------------------------- */
