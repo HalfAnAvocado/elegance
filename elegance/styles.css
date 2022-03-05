@@ -7,6 +7,8 @@
     --elegance-accent-text-color: #cc0000;
     --elegance-accent-background-color: #fff;
 
+    --elegance-subtitle-text-color: #757575;
+
     --elegance-heading-underline-color: #888;
 
     --elegance-code-background-color: #f8f8f8;
@@ -29,6 +31,8 @@
         --elegance-background-color: #111;
         --elegance-accent-text-color: #ff7070;
         --elegance-accent-background-color: #111;
+
+        --elegance-subtitle-text-color: #aaa;
 
         --elegance-heading-underline-color: #a1a1a1;
 
@@ -137,7 +141,17 @@ main a {
     /*text-decoration-color: #000;*/
 }
 
-/*main p:nth-of-type(2):first-letter {*/
+header p {
+    color: var(--elegance-subtitle-text-color);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+header p:first-of-type {
+    margin-top: 0;
+}
+
 main p:first-of-type:first-letter {
     color: var(--elegance-accent-text-color);
     float: left;
@@ -148,7 +162,6 @@ main p:first-of-type:first-letter {
     padding-right: 0.2rem;
 }
 
-/*main p:nth-of-type(2):first-line {*/
 main p:first-of-type:first-line {
     font-variant: small-caps;
 }

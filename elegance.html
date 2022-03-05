@@ -60,36 +60,44 @@
         </nav>
 
         [% FOR page IN pages %]
+            [% FOR headingsection IN page.headings(5) %]
+                [% IF loop.first %]
         <header>
-            <h1>[% page.heading %]</h1>
+            <h1>[% headingsection.heading %]</h1>
+            [% headingsection.body %]
         </header>
 
         <main>
-            [% page.body %]
+                [% ELSE %]
+            [% headingsection.content %]
+                [% END %]
+                [% IF loop.last %]
             <a href="#top" id="eof">eof</a>
         </main>
+                [% END %]
+            [% END %]
 
         <aside>
             [% FOR backlink IN page.backlinks %]
-            [% IF loop.first %]
+                [% IF loop.first %]
             <b>Backlinks:</b>
             <ul>
-            [% END %]
+                [% END %]
                 <li><a href='[% uri(backlink) %]'>[% backlink.basename %]</a></li>
-            [% IF loop.last %]
+                [% IF loop.last %]
             </ul>
-            [% END %]
+                [% END %]
             [% END %]
 
             [% FOR link IN page.links %]
-            [% IF loop.first %]
+                [% IF loop.first %]
             <b>See also:</b>
             <ul>
-            [% END %]
+                [% END %]
                 <li><a href='[% uri(link) %]'>[% link.basename %]</a></li>
-            [% IF loop.last %]
+                [% IF loop.last %]
             </ul>
-            [% END %]
+                [% END %]
             [% END %]
         </aside>
 
