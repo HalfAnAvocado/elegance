@@ -52,6 +52,8 @@ html {
     height: 100vh;
 
     font-size: 125%;
+
+    scrollbar-color: var(--elegance-accent-text-color) var(--elegance-background-color);
 }
 
 body {
