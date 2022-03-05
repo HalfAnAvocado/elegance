@@ -115,6 +115,21 @@ main {
     margin-right: auto;
 }
 
+main p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+main ul, main ol {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+main ul ul, main ul ul ul, main ol ol, main ol ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 main a {
     color: var(--elegance-text-color);
     /*text-decoration-color: #000;*/
